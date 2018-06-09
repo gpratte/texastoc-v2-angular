@@ -7,6 +7,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ForgotPasswordComponent } from './login/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SeasonComponent } from './season/season/season.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    NavbarComponent
+    NavbarComponent,
+    SeasonComponent
   ],
   imports: [
     BrowserModule,
