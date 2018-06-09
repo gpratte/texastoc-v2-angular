@@ -42,9 +42,24 @@ Changed index.html to load the bootstrap css and javascript files from the inter
 
 Added the images from the wireframes repo to the angular assets.
 
-Changed app.component.html to be
-```<app-login></app-login>```
+Changed app.component.html to be ```<app-login></app-login>```
 
 Pushed to branch 01-login.
 
 Merged 01-login into master.
+
+## Default routing
+
+Created a default routing branch from the master branch
+* `git checkout -b 02-default-routing`
+
+Created the routing module
+* `ng generate module app-routing --flat --module=app`
+
+Added the login component as the default route in ```app-routing.module.ts```
+
+Set the `router-outlet` element in ```app-component.html```
+
+Pushed to branch 02-default-routing.
+
+Merged 02-default-routing into master.
