@@ -63,3 +63,23 @@ Set the `router-outlet` element in ```app-component.html```
 Pushed to branch 02-default-routing.
 
 Merged 02-default-routing into master.
+
+## Forgot password
+
+Need to be able to move (route) from the login page to the forgot password page when the Forgot Password linked is clicked. Hence we need routing.
+
+Create a forgot password from the master branch
+* `git checkout -b 03-forgot-password`
+
+Create the forgot-password component
+* `ng generate component login/forgot-password`
+
+Added forgot password route. Added link to login page to go to forgot password page.
+
+Copied the forgot password html and css from the wireframes repo.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 03-forgot-password.
+
+Merged 03-forgot-password into master.
