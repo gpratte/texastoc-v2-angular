@@ -125,3 +125,27 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 05-navbar.
 
 Merged 05-navbar into master.
+
+## Season
+
+See the details of a season.
+
+Create a season branch from the master branch
+* `git checkout -b 06-season`
+
+Create the reset-password component
+* `ng generate component season/season`
+
+Added season route.
+Click on Login button routes to season.
+Click on the Season from the navbar hamburger routes to season.
+
+Copied the season html (there is no css) from the wireframes repo.
+
+Could not get the popup for the season details to work so changed it to an accordian.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 06-season.
+
+Merged 06-season into master.
