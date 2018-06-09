@@ -83,3 +83,25 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 03-forgot-password.
 
 Merged 03-forgot-password into master.
+
+## Reset password
+
+When a enters the email on the forgot password page that user will get an email with a code and a link. Clicking on the link will take the user to the reset password page.
+
+Create a reset password branch from the master branch
+* `git checkout -b 04-reset-password`
+
+Create the reset-password component
+* `ng generate component login/reset-password`
+
+Added reset password route.
+
+Copied the reset password html and css from the wireframes repo.
+
+The url will be **<server>/reset-password**
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 04-reset-password.
+
+Merged 04-reset-password into master.
