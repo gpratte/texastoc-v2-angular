@@ -1,27 +1,29 @@
-# TexastocV2Angular
+# texastoc-v2-angular
+First attempt to write an angular 6 front end for v2 of texastoc.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+## Setup Steps
 
-## Development server
+Created an angular project
+* `ng new texastoc-v2-angular`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Change directory
+* `cd texastoc-v2-angular`
 
-## Code scaffolding
+Git steps
+* `rm -rf .git/`
+* `git init`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Created github repo **texastoc-v2-angular** and set it as the remote origin
+* `git remote add origin https://github.com/gpratte/texastoc-v2-angular.git`
 
-## Build
+More git steps
+* `git pull origin master`
+* `git add .`
+* `git commit -m "initial version after creating angular project"
+* `git push origin master`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The front end can be viewed by running the angular server
+* `ng serve`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+And then hit it in a browser
+* `http://localhost:4200`
