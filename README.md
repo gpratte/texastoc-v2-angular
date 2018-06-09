@@ -1,6 +1,8 @@
 # texastoc-v2-angular
 First attempt to write an angular 6 front end for v2 of texastoc.
 
+For a better understanding of how this repository fits in the bigger picture see my blog at https://fullstack-software-development.blogspot.com/
+
 ## Setup Steps
 
 Created an angular project
