@@ -105,3 +105,23 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 04-reset-password.
 
 Merged 04-reset-password into master.
+
+## Naviation Bar
+
+Need a reusable navbar.
+
+Create a navbar branch from the master branch
+* `git checkout -b 05-navbar`
+
+Create the navbar component
+* `ng generate component navbar`
+
+Copied the navbar html (there is no css) from the wireframes repo.
+
+Add the links to font awesome in index.html.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 05-navbar.
+
+Merged 05-navbar into master.
