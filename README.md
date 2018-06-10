@@ -170,3 +170,32 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 07-season-models.
 
 Merged 07-season-models into master.
+
+## Supplies and classes
+
+See the supplies.
+
+Create a supplies branch from the master branch
+* `git checkout -b 08-supplies`
+
+Create the supplies component
+* `ng generate component supply/supplies`
+
+Added supply route.
+
+Click on the Supplies from the navbar hamburger routes to navigate to the supplies view.
+
+Copied the supplies html (there is no css) from the wireframes repo.
+
+Diff this branch to the previous branch to see the changes.
+
+Create the src/app/supply/model directory and created the following classes
+* Supply  
+
+Used the class to create mock supplies data in the supplies component and use that data in the supplies html.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 08-supplies.
+
+Merged 08-supplies into master.

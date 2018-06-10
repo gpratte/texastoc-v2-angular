@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<main role="main" class="container-fluid">
+   <div class="row text-center">
+      <div class="col-sm">
+        <h1>Supplies</h1>
+        <p>Amount in kitty ${{supplies.kittyAmount}}</p>
+         <table class="table table-borderless table-striped table-sm">
+            <thead>
+               <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Cost</th>
+                  <th scope="col">Description</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let supply of supplies.supplies">
+                  <td>{{supply.date}}</td>
+                  <td>{{supply.type}}</td>
+                  <td>${{supply.cost}}</td>
+                  <td>{{supply.description}}</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+</main>

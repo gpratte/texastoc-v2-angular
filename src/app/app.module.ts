@@ -8,6 +8,7 @@ import { ForgotPasswordComponent } from './login/forgot-password/forgot-password
 import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SeasonComponent } from './season/season/season.component';
+import { SuppliesComponent } from './supply/supplies/supplies.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SeasonComponent } from './season/season/season.component';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     NavbarComponent,
-    SeasonComponent
+    SeasonComponent,
+    SuppliesComponent
   ],
   imports: [
     BrowserModule,

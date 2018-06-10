@@ -6,13 +6,15 @@ import { ForgotPasswordComponent } from './login/forgot-password/forgot-password
 import { ResetPasswordComponent } from './login/reset-password/reset-password.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SeasonComponent } from './season/season/season.component';
+import { SuppliesComponent } from './supply/supplies/supplies.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  { path: 'season', component: SeasonComponent }
+  { path: 'season', component: SeasonComponent },
+  { path: 'supplies', component: SuppliesComponent }
 ];
 
 @NgModule({
