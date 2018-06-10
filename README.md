@@ -151,3 +151,22 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 06-season.
 
 Merged 06-season into master.
+
+## Season classes
+
+Create a season branch from the master branch
+* `git checkout -b 07-season-models`
+
+Create the src/app/season/model directory and created the following classes
+* Season
+* Player
+* Payout
+* Quarter
+
+Used the classes to create mock Season data in the season component and use that data in the season html.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 07-season-models.
+
+Merged 07-season-models into master.
