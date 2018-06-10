@@ -135,7 +135,7 @@ See the details of a season.
 Create a season branch from the master branch
 * `git checkout -b 06-season`
 
-Create the reset-password component
+Create the season component
 * `ng generate component season/season`
 
 Added season route.
