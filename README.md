@@ -190,7 +190,8 @@ Copied the supplies html (there is no css) from the wireframes repo.
 Diff this branch to the previous branch to see the changes.
 
 Create the src/app/supply/model directory and created the following classes
-* Supply  
+* Supplies
+* Supply
 
 Used the class to create mock supplies data in the supplies component and use that data in the supplies html.
 
