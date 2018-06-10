@@ -3,7 +3,7 @@
 <main role="main" class="container-fluid">
   <div class="row text-center">
     <div class="col-sm">
-      <p><b>2018-2019</b></p>
+      <p><b>{{season.startYear}}-{{season.endYear}}</b></p>
       <div class="accordion" id="accordionDetails">
         <div class="card">
           <div class="card-header" id="headingDetails">
@@ -19,27 +19,27 @@
                 <tbody>
                   <tr>
                     <td>Start date</td>
-                    <td>04/30/2018</td>
+                    <td>{{season.start}}</td>
                   </tr>
                   <tr>
                     <td>End date</td>
-                    <td>04/26/2019</td>
+                    <td>{{season.end}}</td>
                   </tr>
                   <tr>
                     <td>Games played</td>
-                    <td>2</td>
+                    <td>{{season.numGames}}</td>
                   </tr>
                   <tr>
                     <td>Total buy in</td>
-                    <td>$2040</td>
+                    <td>${{season.buyIn}}</td>
                   </tr>
                   <tr>
                     <td>Total rebuy/add on</td>
-                    <td>$670</td>
+                    <td>${{season.rebuyAddOn}}</td>
                   </tr>
                   <tr>
                     <td>Total Annual TOC</td>
-                    <td>$860</td>
+                    <td>${{season.annualTocAmount}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -51,9 +51,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>$860</td>
+                  <tr *ngFor="let payout of season.payouts">
+                    <td>{{payout.place}}</td>
+                    <td>${{payout.amount}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -72,27 +72,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Chad Shields</td>
-            <td>136</td>
-            <td>1</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Blair Howell</td>
-            <td>129</td>
-            <td>1</td>
+          <tr *ngFor="let player of season.players">
+            <td>{{player.place}}</td>
+            <td>{{player.name}}</td>
+            <td>{{player.points}}</td>
+            <td>{{player.entries}}</td>
           </tr>
         </tbody>
       </table>
 
       <div class="accordion" id="accordionQuarters">
-        <div class="card">
+        <div  *ngIf="season.quarters[0]" class="card">
           <div class="card-header" id="headingFirstQuarter">
             <h5 class="mb-0">
               <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#firstQuarter" aria-expanded="false" aria-controls="firstQuarter">
-               1st Quarter (current)
+               1st Quarter
                </button>
             </h5>
           </div>
@@ -102,35 +96,27 @@
                 <tbody>
                   <tr>
                     <td>Start date</td>
-                    <td>04/30/2018</td>
+                    <td>{{season.quarters[0].start}}</td>
                   </tr>
                   <tr>
                     <td>End date</td>
-                    <td>07/27/2018</td>
-                  </tr>
-                  <tr>
-                    <td>Quarter</td>
-                    <td>1st</td>
+                    <td>{{season.quarters[0].end}}</td>
                   </tr>
                   <tr>
                     <td>Games played</td>
-                    <td>2</td>
+                    <td>{{season.quarters[0].numGames}}</td>
                   </tr>
                   <tr>
                     <td>Total Quarterly TOC</td>
-                    <td>$160</td>
+                    <td>${{season.quarters[0].quarterlyTocAmount}}</td>
                   </tr>
+
                   <tr>
-                    <td>1st Place Payout (50%)</td>
-                    <td>$80</td>
+                    <td align="center" colspan="2">Payouts</td>
                   </tr>
-                  <tr>
-                    <td>2nd Place Payout (30%)</td>
-                    <td>$48</td>
-                  </tr>
-                  <tr>
-                    <td>3rd Place Payout (20%)</td>
-                    <td>$32</td>
+                  <tr *ngFor="let payout of season.quarters[0].payouts">
+                    <td>{{payout.place}}</td>
+                    <td>${{payout.amount}}</td>
                   </tr>
                 </tbody>
               </table>
@@ -144,24 +130,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Paulie Schuman</td>
-                    <td>96</td>
-                    <td>2</td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Dave Benavidez</td>
-                    <td>90</td>
-                    <td>2</td>
+                  <tr *ngFor="let player of season.quarters[0].players">
+                    <td>{{player.place}}</td>
+                    <td>{{player.name}}</td>
+                    <td>{{player.points}}</td>
+                    <td>{{player.entries}}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-        <div class="card">
+        <div  *ngIf="season.quarters[1]" class="card">
           <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -175,7 +155,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
+        <div  *ngIf="season.quarters[2]" class="card">
           <div class="card-header" id="headingThree">
             <h5 class="mb-0">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
