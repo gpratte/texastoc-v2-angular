@@ -1,4 +1,8 @@
 export class Payout {
-  amount: number;
-  place: number;
+
+  constructor(
+    public amount: number,
+    public place: number
+  ) {}
+
 }

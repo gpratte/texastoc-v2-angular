@@ -81,95 +81,253 @@
         </tbody>
       </table>
 
-      <div class="accordion" id="accordionQuarters">
-        <div  *ngIf="season.quarters[0]" class="card">
-          <div class="card-header" id="headingFirstQuarter">
-            <h5 class="mb-0">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#firstQuarter" aria-expanded="false" aria-controls="firstQuarter">
-               1st Quarter
-               </button>
-            </h5>
-          </div>
-          <div id="firstQuarter" class="collapse" aria-labelledby="headingFirstQuarter" data-parent="#accordionQuarters">
-            <div class="card-body">
-              <table class="table table-borderless table-sm">
-                <tbody>
-                  <tr>
-                    <td>Start date</td>
-                    <td>{{season.quarters[0].start}}</td>
-                  </tr>
-                  <tr>
-                    <td>End date</td>
-                    <td>{{season.quarters[0].end}}</td>
-                  </tr>
-                  <tr>
-                    <td>Games played</td>
-                    <td>{{season.quarters[0].numGames}}</td>
-                  </tr>
-                  <tr>
-                    <td>Total Quarterly TOC</td>
-                    <td>${{season.quarters[0].quarterlyTocAmount}}</td>
-                  </tr>
+      <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="games-tab" data-toggle="tab" href="#games" role="tab" aria-controls="games" aria-selected="true">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="quarters-tab" data-toggle="tab" href="#quarters" role="tab" aria-controls="quarters" aria-selected="false">Quarters</a>
+        </li>
+      </ul>
 
-                  <tr>
-                    <td align="center" colspan="2">Payouts</td>
-                  </tr>
-                  <tr *ngFor="let payout of season.quarters[0].payouts">
-                    <td>{{payout.place}}</td>
-                    <td>${{payout.amount}}</td>
-                  </tr>
-                </tbody>
-              </table>
-              <table class="table table-borderless table-sm">
-                <thead>
-                  <tr>
-                    <th>Place</th>
-                    <th>Name</th>
-                    <th>Points</th>
-                    <th>Entries</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let player of season.quarters[0].players">
-                    <td>{{player.place}}</td>
-                    <td>{{player.name}}</td>
-                    <td>{{player.points}}</td>
-                    <td>{{player.entries}}</td>
-                  </tr>
-                </tbody>
-              </table>
+      <div class="tab-content" id="myTabContent">
+
+        <!-- Games -->
+        <div class="tab-pane show fade active" id="games" role="tabpanel" aria-labelledby="games-tab">
+          <div class="accordion" id="accordionGames">
+            <div class="card">
+              <div class="card-header" id="headingGame2">
+                <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#game2" aria-expanded="false" aria-controls="game2">
+                05/03/2018
+                </button>
+             </h5>
+              </div>
+              <div id="game2" class="collapse" aria-labelledby="headingGame2" data-parent="#accordionGames">
+                <div class="card-body">
+                  <table class="table table-borderless table-sm">
+                    <tbody>
+                      <tr>
+                        <td>Date</td>
+                        <td>05/03/2018</td>
+                      </tr>
+                      <tr>
+                        <td>Host</td>
+                        <td>Brian Baker</td>
+                      </tr>
+                      <tr>
+                        <td>Season game</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>Quarterly game</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>Number of Players</td>
+                        <td>21</td>
+                      </tr>
+                      <tr>
+                        <td>Double buy in</td>
+                        <td>Yes</td>
+                      </tr>
+                      <tr>
+                        <td>Total buy in</td>
+                        <td>$1260</td>
+                      </tr>
+                      <tr>
+                        <td>Total Re-buy/Add-on</td>
+                        <td>$440</td>
+                      </tr>
+                      <tr>
+                        <td>Total Annual TOC</td>
+                        <td>$440</td>
+                      </tr>
+                      <tr>
+                        <td>Total Quarterly TOC</td>
+                        <td>$90</td>
+                      </tr>
+                      <tr>
+                        <td>Started</td>
+                        <td>7:48</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-borderless table-sm">
+                    <thead>
+                      <tr>
+                        <th>Place</th>
+                        <th>Payout</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>$765</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>$425</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>$306</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>$204</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-borderless table-sm">
+                    <thead>
+                      <tr>
+                        <th>Fin</th>
+                        <th>Name</th>
+                        <th>Pts</th>
+                        <th>TOC</th>
+                        <th>QTOC</th>
+                        <th>Buy<br/>in</th>
+                        <th>Re<br/>buy</th>
+                        <th>Chop</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Andy<br/>Thomas</td>
+                        <td>125</td>
+                        <td>Yes</td>
+                        <td></td>
+                        <td>60</td>
+                        <td>40</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Paulie<br/>Schuman</td>
+                        <td>96</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                        <td>60</td>
+                        <td>40</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingGame1">
+                <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#game1" aria-expanded="false" aria-controls="game1">
+                05/10/2018
+                </button>
+             </h5>
+              </div>
+              <div id="game1" class="collapse" aria-labelledby="headingGame1" data-parent="#accordionGames">
+                <div class="card-body">
+                  2nd Q
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div  *ngIf="season.quarters[1]" class="card">
-          <div class="card-header" id="headingTwo">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                2nd Quarter
-              </button>
-            </h5>
-          </div>
-          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionQuarters">
-            <div class="card-body">
-              2nd Q
+
+        <!-- Quarters -->
+        <div class="tab-pane show fade" id="quarters" role="tabpanel" aria-labelledby="quarters-tab">
+          <div class="accordion" id="accordionQuarters">
+            <div *ngIf="season.quarters[0]" class="card">
+              <div class="card-header" id="headingFirstQuarter">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#firstQuarter" aria-expanded="false" aria-controls="firstQuarter">
+                   1st Quarter
+                   </button>
+                </h5>
+              </div>
+              <div id="firstQuarter" class="collapse" aria-labelledby="headingFirstQuarter" data-parent="#accordionQuarters">
+                <div class="card-body">
+                  <table class="table table-borderless table-sm">
+                    <tbody>
+                      <tr>
+                        <td>Start date</td>
+                        <td>{{season.quarters[0].start}}</td>
+                      </tr>
+                      <tr>
+                        <td>End date</td>
+                        <td>{{season.quarters[0].end}}</td>
+                      </tr>
+                      <tr>
+                        <td>Games played</td>
+                        <td>{{season.quarters[0].numGames}}</td>
+                      </tr>
+                      <tr>
+                        <td>Total Quarterly TOC</td>
+                        <td>${{season.quarters[0].quarterlyTocAmount}}</td>
+                      </tr>
+
+                      <tr>
+                        <td align="center" colspan="2">Payouts</td>
+                      </tr>
+                      <tr *ngFor="let payout of season.quarters[0].payouts">
+                        <td>{{payout.place}}</td>
+                        <td>${{payout.amount}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <table class="table table-borderless table-sm">
+                    <thead>
+                      <tr>
+                        <th>Place</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                        <th>Entries</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let player of season.quarters[0].players">
+                        <td>{{player.place}}</td>
+                        <td>{{player.name}}</td>
+                        <td>{{player.points}}</td>
+                        <td>{{player.entries}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="season.quarters[1]" class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2nd Quarter
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionQuarters">
+                <div class="card-body">
+                  2nd Q
+                </div>
+              </div>
+            </div>
+            <div *ngIf="season.quarters[2]" class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3rd Quarter
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionQuarters">
+                <div class="card-body">
+                  3rd Q
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div  *ngIf="season.quarters[2]" class="card">
-          <div class="card-header" id="headingThree">
-            <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                3rd Quarter
-              </button>
-            </h5>
-          </div>
-          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionQuarters">
-            <div class="card-body">
-              3rd Q
-            </div>
-          </div>
-        </div>
+
       </div>
+
     </div>
   </div>
 </main>

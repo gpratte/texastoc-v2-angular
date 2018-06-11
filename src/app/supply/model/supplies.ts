@@ -1,6 +1,10 @@
 import { Supply } from './supply';
 
 export class Supplies {
-  kittyAmount: number;
-  supplies: Supply[];
+
+  constructor(
+    public kittyAmount: number,
+    public supplies: Supply[]
+  ) {}
+
 }

@@ -86,6 +86,42 @@ export class SeasonComponent implements OnInit {
           }
         ]
       }
+    ],
+    games: [
+      {
+        id: 1,
+        quarter: 1,
+        start: '2018-06-03',
+        end: '2019-06-02',
+        numGames: 2,
+        quarterlyTocAmount: 860,
+        payouts: [
+          {
+            amount: 100,
+            place: 1
+          },
+          {
+            amount: 85,
+            place: 2
+          }
+        ],
+        players: [
+          {
+            entries: 2,
+            name: "Tom",
+            place: 1,
+            id: 100,
+            points: 100
+          },
+          {
+            entries: 1,
+            name: "Dick",
+            place: 2,
+            id: 101,
+            points: 88
+          }
+        ]
+      }
     ]
   };
 

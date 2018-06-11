@@ -1,7 +1,11 @@
 export class Supply {
-  id: number;
-  date: string;
-  type: string;
-  cost: number;
-  description: string;
+
+  constructor(
+    public date: string,
+    public type: string,
+    public cost: number,
+    public id?: number,
+    public description?: string
+  ) {}
+
 }
