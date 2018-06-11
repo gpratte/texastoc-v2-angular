@@ -1,5 +1,5 @@
-import { Payout } from './payout';
-import { Player } from './player';
+import { Payout } from './../../payout/model/payout';
+import { Player } from './../../player/model/player';
 import { Quarter } from './quarter';
 
 export class Season {

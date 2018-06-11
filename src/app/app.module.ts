@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login/login.component';
@@ -9,6 +10,7 @@ import { ResetPasswordComponent } from './login/reset-password/reset-password.co
 import { NavbarComponent } from './navbar/navbar.component';
 import { SeasonComponent } from './season/season/season.component';
 import { SuppliesComponent } from './supply/supplies/supplies.component';
+import { GameComponent } from './game/game/game.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { SuppliesComponent } from './supply/supplies/supplies.component';
     ResetPasswordComponent,
     NavbarComponent,
     SeasonComponent,
-    SuppliesComponent
+    SuppliesComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

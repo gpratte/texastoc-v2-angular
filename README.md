@@ -200,3 +200,30 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 08-supplies.
 
 Merged 08-supplies into master.
+
+## New Game
+
+Create a new game.
+
+Create a new game branch from the master branch
+* `git checkout -b 09-new-game`
+
+Create the (new) game component
+* `ng generate component game/game`
+
+Create the src/app/game/model directory and created the following classes
+* Game
+
+Added new game route.
+
+Click on the New Game from the navbar hamburger routes to navigate to the new game view.
+
+Copied the new game html (there is no css) from the wireframes repo.
+
+Worked through the Angular form templates documentation (https://angular.io/guide/forms) to bind the model of the game to the form. This way the game component can be used to create a new game or update an existing game.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 09-new-game.
+
+Merged 09-new-game into master.
