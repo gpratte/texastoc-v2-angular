@@ -311,3 +311,27 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 13-new-player.
 
 Merged 13-new-player into master.
+
+## Add Player to game
+
+Add an existing player.
+
+Create an existing player branch from the master branch
+* `git checkout -b 14-existing-player`
+
+Create the existing player component
+* `ng generate component game/existing-player`
+
+Added existing player route.
+
+Add a button in the current game to add an existing player.
+
+TODO code existing player component.
+
+The existing player component redirects to the current game when the form is submitted.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 14-existing-player.
+
+Merged 14-existing-player into master.

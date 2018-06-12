@@ -25,17 +25,13 @@ export class GameSeatingComponent implements OnInit {
     new Player(3, 'Harry')
   ]
 
-  tables = [
-    new Table(1, [
-      new Seat(1,100,"Tom"),
-      new Seat(4,101,"Dick"),
-      new Seat(7,102,"Harry"),
-    ]),
-    new Table(2, [
-      new Seat(2,100,"Tina Louise"),
-      new Seat(5,101,"Dina"),
-      new Seat(8,102,"Hina"),
-    ])
+  seats = [
+    new Seat(1,100,"Tom",1),
+    new Seat(4,101,"Dick",1),
+    new Seat(7,102,"Harry",1),
+    new Seat(2,100,"Tina Louise",2),
+    new Seat(5,101,"Dina",2),
+    new Seat(8,102,"Hina",2),
   ]
 
   addSpecialSeat(): void {

@@ -14,6 +14,7 @@ import { GameComponent } from './game/game/game.component';
 import { CurrentGameComponent } from './game/current-game/current-game.component';
 import { GameSeatingComponent } from './game/game-seating/game-seating.component';
 import { NewPlayerComponent } from './game/new-player/new-player.component';
+import { ExistingPlayerComponent } from './game/existing-player/existing-player.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewPlayerComponent } from './game/new-player/new-player.component';
     GameComponent,
     CurrentGameComponent,
     GameSeatingComponent,
-    NewPlayerComponent
+    NewPlayerComponent,
+    ExistingPlayerComponent
   ],
   imports: [
     BrowserModule,

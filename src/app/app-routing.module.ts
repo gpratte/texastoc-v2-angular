@@ -10,6 +10,7 @@ import { SuppliesComponent } from './supply/supplies/supplies.component';
 import { GameComponent } from './game/game/game.component';
 import { CurrentGameComponent } from './game/current-game/current-game.component';
 import { NewPlayerComponent } from './game/new-player/new-player.component';
+import { ExistingPlayerComponent } from './game/existing-player/existing-player.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'supplies', component: SuppliesComponent },
   { path: 'game', component: GameComponent },
   { path: 'current-game', component: CurrentGameComponent },
-  { path: 'new-player', component: NewPlayerComponent }
+  { path: 'new-player', component: NewPlayerComponent },
+  { path: 'existing-player', component: ExistingPlayerComponent }
 ];
 
 @NgModule({

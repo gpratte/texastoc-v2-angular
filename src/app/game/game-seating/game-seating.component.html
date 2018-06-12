@@ -134,7 +134,7 @@
         </div>
         <div id="seated" class="collapse" aria-labelledby="headingSeated" data-parent="#accordionSeated">
           <div class="card-body">
-            <table *ngFor="let table of tables" class='table table-borderless table-sm'>
+            <table class='table table-borderless table-sm table-striped'>
               <thead>
                 <tr>
                   <th scope='col'>Player</th>
@@ -143,9 +143,9 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let seat of table.seats">
+                <tr *ngFor="let seat of seats">
                   <td>{{seat.gamePlayerName}}</td>
-                  <td>{{table.number}}</td>
+                  <td>{{seat.tableNumber}}</td>
                   <td>{{seat.number}}</td>
                 </tr>
               </tbody>
