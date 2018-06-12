@@ -1,3 +1,5 @@
+<app-navbar></app-navbar>
+
 <main role="main" class="container-fluid">
   <div class="row text-center">
     <div class="col-sm">
@@ -76,126 +78,28 @@
        <table class="table table-borderless table-striped table-sm">
          <thead>
            <tr>
-             <th></th>
+             <th>Fin</th>
              <th>Name</th>
              <th>Buy<br>In</th>
              <th>Re<br>Buy</th>
              <th>TOC</th>
              <th>QTOC</th>
              <th>Pts</th>
+             <th *ngIf="game.showChop">Chp</th>
            </tr>
          </thead>
          <tbody>
-           <tr>
-             <th>1</th>
-             <th>Brian<br>Baker</th>
-             <th>30</th>
-             <th>20</th>
-             <th>10</th>
-             <th>10</th>
-             <th>135</th>
-           </tr>
-           <tr>
-             <th>2</th>
-             <th>Beau<br>Edge</th>
-             <th>30</th>
-             <th>20</th>
-             <th>10</th>
-             <th>10</th>
-             <th>112</th>
-           </tr>
-           <tr>
-             <th>3</th>
-             <th>Roy<br>Feigel</th>
-             <th>30</th>
-             <th></th>
-             <th></th>
-             <th></th>
-             <th>97</th>
-           </tr>
-           <tr>
-             <th>x</th>
-             <th>John<br>Hiatt</th>
-             <th>30</th>
-             <th></th>
-             <th></th>
-             <th></th>
-             <th></th>
+           <tr *ngFor="let player of game.players">
+             <td>{{player.place}}</td>
+             <td>{{player.name}}</td>
+             <td>{{player.buyIn}}</td>
+             <td>{{player.reBuyAddOn}}</td>
+             <td>{{player.annualTocAmout}}</td>
+             <td>{{player.quarterlyTocAmount}}</td>
+             <td>{{player.points}}</td>
            </tr>
          </tbody>
        </table>
-     </div>
-  </div>
-
-  <div class="row text-center">
-     <div class="col-sm">
-       <div class="accordion" id="accordionSeating">
-          <div class="card">
-             <div class="card-header" id="headingSeating">
-                <h5 class="mb-0">
-                   <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#seating" aria-expanded="false" aria-controls="seating">
-                   Seating
-                   </button>
-                </h5>
-             </div>
-             <div id="seating" class="collapse" aria-labelledby="headingSeating" data-parent="#accordionSeating">
-                <div class="card-body">
-                  <form>
-                    <div class="form-group">
-                        <label for="numTables">Number of tables</label>
-                        <select class="form-control" id="numTables">
-                          <option></option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                          <option>5</option>
-                        </select>
-                        <label for="seatsPerTable">Seats per table</label>
-                        <select class="form-control" id="seatsPerTable">
-                          <option></option>
-                          <option>10</option>
-                          <option>9</option>
-                          <option>8</option>
-                          <option>7</option>
-                          <option>6</option>
-                          <option>5</option>
-                          <option>4</option>
-                          <option>3</option>
-                          <option>2</option>
-                        </select>
-                        <br>
-                        <p>Seat player at table</p>
-                        <table class="table table-borderless table-sm">
-                          <tbody>
-                            <tr>
-                              <th>
-                                <select class="form-control" id="playerId">
-                                  <option></option>
-                                  <option>Beau Edge</option>
-                                  <option>Dave Benavidas</option>
-                                </select>
-                              </th>
-                              <th>
-                                <select class="form-control" id="tableNum">
-                                  <option></option>
-                                  <option>1</option>
-                                  <option>2</option>
-                                </select>
-                              </th>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                  </form>
-                  <button type="button" class="btn btn-warning">Reset Seating</button>
-                  <br>&nbsp;
-
-                </div>
-             </div>
-          </div>
-       </div>
-
      </div>
   </div>
 

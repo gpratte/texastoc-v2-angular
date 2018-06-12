@@ -66,7 +66,8 @@ export class CurrentGameComponent implements OnInit {
     ],
     paidPlayers: 20,
     numRemainingPlayers: 15,
-    averageStack: 6250
+    averageStack: 6250,
+    showChop: false
   };
 
 

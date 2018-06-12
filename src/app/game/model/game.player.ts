@@ -5,6 +5,7 @@ export class GamePlayer {
     public name: string,
     public buyIn: number,
     public id?: number,
+    public out?: boolean,
     public reBuyAddOn?: number,
     public annualTocAmout?: number,
     public quarterlyTocAmount?: number,
