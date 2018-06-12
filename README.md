@@ -266,3 +266,24 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 11-current-game.
 
 Merged 11-current-game into master.
+
+## Seating
+
+Seat the game players.
+
+Create a current games branch from the master branch
+* `git checkout -b 12-game-seating`
+
+Create the seating component.
+
+Add the seating component to the bottom of the game html.
+
+Choose the number of tables, seats per table, and assign up to 5 players to certain tables.
+
+Show the seated (the results of the seating).
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 12-game-seating.
+
+Merged 12-game-seating into master.
