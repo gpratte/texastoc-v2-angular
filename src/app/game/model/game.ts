@@ -8,6 +8,7 @@ export class Game {
     public hostId: number,
     public transportRequired: boolean,
     public doubleBuyin: boolean,
+    public id?: number,
     public started?: string,
     public hostName?: string,
     public seasonOrdinal?: number,

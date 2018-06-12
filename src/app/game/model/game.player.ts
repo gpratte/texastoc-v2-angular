@@ -1,9 +1,10 @@
 export class GamePlayer {
 
   constructor(
-    public id: number,
+    public playerId: number,
     public name: string,
     public buyIn: number,
+    public id?: number,
     public reBuyAddOn?: number,
     public annualTocAmout?: number,
     public quarterlyTocAmount?: number,

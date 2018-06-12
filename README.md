@@ -227,3 +227,22 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 09-new-game.
 
 Merged 09-new-game into master.
+
+## Games of the season
+
+Show the games in the season.
+
+Create a games in season branch from the master branch
+* `git checkout -b 10-games-in-season`
+
+Instead of showing just the quarters at the bottom of the season page now there are two tabs - one for quarters and the other for games.
+
+Copied the games html (there is no css) from the wireframes repo to use in the games tab.
+
+Lots of googling to figure out how to use ngFor in an accordian.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 10-games-in-season.
+
+Merged 10-games-in-season into master.

@@ -95,61 +95,62 @@
         <!-- Games -->
         <div class="tab-pane show fade active" id="games" role="tabpanel" aria-labelledby="games-tab">
           <div class="accordion" id="accordionGames">
-            <div class="card">
-              <div class="card-header" id="headingGame2">
+
+            <div class="card" *ngFor="let game of season.games; let i = index">
+              <div class="card-header" [attr.id]="'header' + i">
                 <h5 class="mb-0">
-                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#game2" aria-expanded="false" aria-controls="game2">
-                05/03/2018
+                <button class="btn btn-link" type="button" data-toggle="collapse" [attr.data-target]="'#' + i" aria-expanded="false" [attr.aria-controls]="i">
+                {{game.date}}
                 </button>
              </h5>
               </div>
-              <div id="game2" class="collapse" aria-labelledby="headingGame2" data-parent="#accordionGames">
+              <div [attr.id]="i" class="collapse" [attr.aria-labelledby]="'header' + i" data-parent="#accordionGames">
                 <div class="card-body">
                   <table class="table table-borderless table-sm">
                     <tbody>
                       <tr>
                         <td>Date</td>
-                        <td>05/03/2018</td>
+                        <td>{{game.date}}</td>
                       </tr>
                       <tr>
                         <td>Host</td>
-                        <td>Brian Baker</td>
+                        <td>{{game.hostName}}</td>
                       </tr>
                       <tr>
                         <td>Season game</td>
-                        <td>1</td>
+                        <td>{{game.seasonOrdinal}}</td>
                       </tr>
                       <tr>
                         <td>Quarterly game</td>
-                        <td>1</td>
+                        <td>{{game.quarterOrdinal}}</td>
                       </tr>
                       <tr>
                         <td>Number of Players</td>
-                        <td>21</td>
+                        <td>{{game.numPlayers}}</td>
                       </tr>
                       <tr>
                         <td>Double buy in</td>
-                        <td>Yes</td>
+                        <td>{{game.doubleBuyin}}</td>
                       </tr>
                       <tr>
                         <td>Total buy in</td>
-                        <td>$1260</td>
+                        <td>${{game.buyIn}}</td>
                       </tr>
                       <tr>
                         <td>Total Re-buy/Add-on</td>
-                        <td>$440</td>
+                        <td>${{game.reBuyAddOn}}</td>
                       </tr>
                       <tr>
                         <td>Total Annual TOC</td>
-                        <td>$440</td>
+                        <td>${{game.annualTocAmount}}</td>
                       </tr>
                       <tr>
                         <td>Total Quarterly TOC</td>
-                        <td>$90</td>
+                        <td>${{game.quarterlyTocAmount}}</td>
                       </tr>
                       <tr>
                         <td>Started</td>
-                        <td>7:48</td>
+                        <td>{{game.started}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -161,21 +162,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>$765</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>$425</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>$306</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>$204</td>
+                      <tr *ngFor="let payout of game.payouts">
+                        <td>{{payout.place}}</td>
+                        <td>${{payout.amount}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -185,51 +174,30 @@
                         <th>Fin</th>
                         <th>Name</th>
                         <th>Pts</th>
-                        <th>TOC</th>
-                        <th>QTOC</th>
                         <th>Buy<br/>in</th>
                         <th>Re<br/>buy</th>
+                        <th>TOC</th>
+                        <th>QTOC</th>
                         <th>Chop</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Andy<br/>Thomas</td>
-                        <td>125</td>
-                        <td>Yes</td>
-                        <td></td>
-                        <td>60</td>
-                        <td>40</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Paulie<br/>Schuman</td>
-                        <td>96</td>
-                        <td>Yes</td>
-                        <td>Yes</td>
-                        <td>60</td>
-                        <td>40</td>
+                      <tr *ngFor="let player of game.players">
+                        <td>{{player.place}}</td>
+                        <td>{{player.name}}</td>
+                        <td>{{player.points}}</td>
+                        <td>{{player.buyIn}}</td>
+                        <td>{{player.reBuyAddOn}}</td>
+                        <td>{{player.annualTocAmout}}</td>
+                        <td>{{player.quarterlyTocAmount}}</td>
+                        <td>{{player.chop}}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header" id="headingGame1">
-                <h5 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#game1" aria-expanded="false" aria-controls="game1">
-                05/10/2018
-                </button>
-             </h5>
-              </div>
-              <div id="game1" class="collapse" aria-labelledby="headingGame1" data-parent="#accordionGames">
-                <div class="card-body">
-                  2nd Q
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
 
