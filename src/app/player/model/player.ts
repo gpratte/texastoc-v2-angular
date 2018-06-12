@@ -5,6 +5,7 @@ export class Player {
     public name: string,
     public place?: number,
     public points?: number,
-    public entries?: number
+    public entries?: number,
+    public email?: string
   ) {}
 }

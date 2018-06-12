@@ -287,3 +287,27 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 12-game-seating.
 
 Merged 12-game-seating into master.
+
+## New Player
+
+Add a new player.
+
+Create a new player branch from the master branch
+* `git checkout -b 13-new-player`
+
+Create the new player component
+* `ng generate component game/new-player`
+
+Added new player route.
+
+Add a button in the current game to add a new player.
+
+Copied the reset password html and changed it for new player.
+
+The new player component redirects to the current game when the form is submitted.
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 13-new-player.
+
+Merged 13-new-player into master.

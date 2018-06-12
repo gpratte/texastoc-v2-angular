@@ -13,6 +13,7 @@ import { SuppliesComponent } from './supply/supplies/supplies.component';
 import { GameComponent } from './game/game/game.component';
 import { CurrentGameComponent } from './game/current-game/current-game.component';
 import { GameSeatingComponent } from './game/game-seating/game-seating.component';
+import { NewPlayerComponent } from './game/new-player/new-player.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GameSeatingComponent } from './game/game-seating/game-seating.component
     SuppliesComponent,
     GameComponent,
     CurrentGameComponent,
-    GameSeatingComponent
+    GameSeatingComponent,
+    NewPlayerComponent
   ],
   imports: [
     BrowserModule,

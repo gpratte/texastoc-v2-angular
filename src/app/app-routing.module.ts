@@ -9,6 +9,7 @@ import { SeasonComponent } from './season/season/season.component';
 import { SuppliesComponent } from './supply/supplies/supplies.component';
 import { GameComponent } from './game/game/game.component';
 import { CurrentGameComponent } from './game/current-game/current-game.component';
+import { NewPlayerComponent } from './game/new-player/new-player.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'season', component: SeasonComponent },
   { path: 'supplies', component: SuppliesComponent },
   { path: 'game', component: GameComponent },
-  { path: 'current-game', component: CurrentGameComponent }
+  { path: 'current-game', component: CurrentGameComponent },
+  { path: 'new-player', component: NewPlayerComponent }
 ];
 
 @NgModule({
