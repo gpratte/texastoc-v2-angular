@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SeasonComponent } from './season/season/season.component';
 import { SuppliesComponent } from './supply/supplies/supplies.component';
 import { GameComponent } from './game/game/game.component';
+import { CurrentGameComponent } from './game/current-game/current-game.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'season', component: SeasonComponent },
   { path: 'supplies', component: SuppliesComponent },
-  { path: 'game', component: GameComponent }
+  { path: 'game', component: GameComponent },
+  { path: 'current-game', component: CurrentGameComponent }
 ];
 
 @NgModule({

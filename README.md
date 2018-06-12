@@ -187,8 +187,6 @@ Click on the Supplies from the navbar hamburger routes to navigate to the suppli
 
 Copied the supplies html (there is no css) from the wireframes repo.
 
-Diff this branch to the previous branch to see the changes.
-
 Create the src/app/supply/model directory and created the following classes
 * Supplies
 * Supply

@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SeasonComponent } from './season/season/season.component';
 import { SuppliesComponent } from './supply/supplies/supplies.component';
 import { GameComponent } from './game/game/game.component';
+import { CurrentGameComponent } from './game/current-game/current-game.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GameComponent } from './game/game/game.component';
     NavbarComponent,
     SeasonComponent,
     SuppliesComponent,
-    GameComponent
+    GameComponent,
+    CurrentGameComponent
   ],
   imports: [
     BrowserModule,

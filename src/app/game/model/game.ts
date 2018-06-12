@@ -14,9 +14,12 @@ export class Game {
     public seasonOrdinal?: number,
     public quarterOrdinal?: number,
     public numPlayers?: number,
+    public kitty?: number,
     public buyIn?: number,
     public rebuyAddOn?: number,
     public annualTocAmount?: number,
+    public adjustedRebuyAddOn?: number,
+    public adjustedAnnualTocAmount?: number,
     public quarterlyTocAmount?: number,
     public payouts?: Payout[],
     public players?: GamePlayer[]
