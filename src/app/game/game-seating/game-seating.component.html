@@ -1,0 +1,74 @@
+<div class="row text-center">
+   <div class="col-sm">
+     <div class="accordion" id="accordionSeating">
+        <div class="card">
+           <div class="card-header" id="headingSeating">
+              <h5 class="mb-0">
+                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#seating" aria-expanded="false" aria-controls="seating">
+                 Seating
+                 </button>
+              </h5>
+           </div>
+           <div id="seating" class="collapse" aria-labelledby="headingSeating" data-parent="#accordionSeating">
+              <div class="card-body">
+                <form (ngSubmit)="onSubmit()" #gameSeatingForm="ngForm">
+                  <div class="form-group">
+                      <label for="numTables">Number of tables</label>
+                      <select class="form-control" id="numTables">
+                        <option></option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                      </select>
+                      <label for="seatsPerTable">Seats per table</label>
+                      <select class="form-control" id="seatsPerTable">
+                        <option></option>
+                        <option>10</option>
+                        <option>9</option>
+                        <option>8</option>
+                        <option>7</option>
+                        <option>6</option>
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                      </select>
+                      <br>
+                      <p>Seat player at table</p>
+                      <table class="table table-borderless table-sm">
+                        <tbody>
+                          <tr>
+                            <th>
+                              <label for="player1Id">Player</label>
+                              <select class="form-control" id="player1Id"  [(ngModel)]="model.player1Id" name="player1Id">
+                                <option *ngFor="let player of players" [value]="player.id">{{player.name}}</option>
+                              </select>
+                            </th>
+                            <th>
+                              <select class="form-control" id="tableNum">
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                              </select>
+                            </th>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                </form>
+                <button type="button" class="btn btn-warning">Reset Seating</button>
+                <br>&nbsp;
+
+              </div>
+           </div>
+        </div>
+     </div>
+   </div>
+</div>
