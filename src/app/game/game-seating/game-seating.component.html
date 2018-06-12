@@ -1,74 +1,127 @@
 <div class="row text-center">
-   <div class="col-sm">
-     <div class="accordion" id="accordionSeating">
-        <div class="card">
-           <div class="card-header" id="headingSeating">
-              <h5 class="mb-0">
+  <div class="col-sm">
+    <div class="accordion" id="accordionSeating">
+      <div class="card">
+        <div class="card-header" id="headingSeating">
+          <h5 class="mb-0">
                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#seating" aria-expanded="false" aria-controls="seating">
                  Seating
                  </button>
               </h5>
-           </div>
-           <div id="seating" class="collapse" aria-labelledby="headingSeating" data-parent="#accordionSeating">
-              <div class="card-body">
-                <form (ngSubmit)="onSubmit()" #gameSeatingForm="ngForm">
-                  <div class="form-group">
-                      <label for="numTables">Number of tables</label>
-                      <select class="form-control" id="numTables">
-                        <option></option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                      </select>
-                      <label for="seatsPerTable">Seats per table</label>
-                      <select class="form-control" id="seatsPerTable">
-                        <option></option>
-                        <option>10</option>
-                        <option>9</option>
-                        <option>8</option>
-                        <option>7</option>
-                        <option>6</option>
-                        <option>5</option>
-                        <option>4</option>
-                        <option>3</option>
-                        <option>2</option>
-                      </select>
-                      <br>
-                      <p>Seat player at table</p>
-                      <table class="table table-borderless table-sm">
-                        <tbody>
-                          <tr>
-                            <th>
-                              <label for="player1Id">Player</label>
-                              <select class="form-control" id="player1Id"  [(ngModel)]="model.player1Id" name="player1Id">
+        </div>
+        <div id="seating" class="collapse" aria-labelledby="headingSeating" data-parent="#accordionSeating">
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #gameSeatingForm="ngForm">
+              <div class="form-group">
+                <label for="numTables">Number of Tables</label>
+                <select class="form-control" id="numTables" [(ngModel)]="model.numTables" name="numTables" required>
+                      <option *ngFor="let tableNum of numTables" [value]="tableNum">{{tableNum}}</option>
+                </select>
+
+                <label for="seatsPerTable">Seats Per Table</label>
+                <select class="form-control" id="seatsPerTable" [(ngModel)]="model.seatsPerTable" name="seatsPerTable" required>
+                      <option *ngFor="let seatsPerTable of numSeatsPerTable" [value]="seatsPerTable">{{seatsPerTable}}</option>
+                </select>
+
+                <table *ngIf="numSpecialSeating > 0" class="table table-borderless table-sm">
+                  <tbody>
+                    <tr>
+                      <td>
+                        Player
+                      </td>
+                      <td>
+                        Table
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select class="form-control" id="player1Id" [(ngModel)]="model.player1Id" name="player1Id">
                                 <option *ngFor="let player of players" [value]="player.id">{{player.name}}</option>
                               </select>
-                            </th>
-                            <th>
-                              <select class="form-control" id="tableNum">
-                                <option></option>
-                                <option>1</option>
-                                <option>2</option>
+                      </td>
+                      <td>
+                        <select class="form-control" id="table1" [(ngModel)]="model.table1" name="table1">
+                              <option *ngFor="let tableNum of numTables" [value]="tableNum">{{tableNum}}</option>
+                        </select>
+                      </td>
+                      <td align="left" *ngIf="numSpecialSeating == 1">
+                        <button class="btn btn-danger" (click)="removeSpecialSeat()">x</button>
+                      </td>
+                    </tr>
+                    <tr *ngIf="numSpecialSeating > 1" >
+                      <td>
+                        <select class="form-control" id="player2Id" [(ngModel)]="model.player2Id" name="player2Id">
+                                <option *ngFor="let player of players" [value]="player.id">{{player.name}}</option>
                               </select>
-                            </th>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                </form>
-                <button type="button" class="btn btn-warning">Reset Seating</button>
-                <br>&nbsp;
+                      </td>
+                      <td>
+                        <select class="form-control" id="table2" [(ngModel)]="model.table2" name="table2">
+                              <option *ngFor="let tableNum of numTables" [value]="tableNum">{{tableNum}}</option>
+                        </select>
+                      </td>
+                      <td align="left" *ngIf="numSpecialSeating == 2">
+                        <button class="btn btn-danger" (click)="removeSpecialSeat()">x</button>
+                      </td>
+                    </tr>
+                    <tr *ngIf="numSpecialSeating > 2" >
+                      <td>
+                        <select class="form-control" id="player3Id" [(ngModel)]="model.player3Id" name="player3Id">
+                                <option *ngFor="let player of players" [value]="player.id">{{player.name}}</option>
+                              </select>
+                      </td>
+                      <td>
+                        <select class="form-control" id="table3" [(ngModel)]="model.table3" name="table3">
+                              <option *ngFor="let tableNum of numTables" [value]="tableNum">{{tableNum}}</option>
+                        </select>
+                      </td>
+                      <td align="left" *ngIf="numSpecialSeating == 3">
+                        <button class="btn btn-danger" (click)="removeSpecialSeat()">x</button>
+                      </td>
+                    </tr>
 
+                    <tr *ngIf="numSpecialSeating > 3" >
+                      <td>
+                        <select class="form-control" id="player4Id" [(ngModel)]="model.player4Id" name="player4Id">
+                                <option *ngFor="let player of players" [value]="player.id">{{player.name}}</option>
+                              </select>
+                      </td>
+                      <td>
+                        <select class="form-control" id="table4" [(ngModel)]="model.table4" name="table4">
+                              <option *ngFor="let tableNum of numTables" [value]="tableNum">{{tableNum}}</option>
+                        </select>
+                      </td>
+                      <td align="left" *ngIf="numSpecialSeating == 4">
+                        <button class="btn btn-danger" (click)="removeSpecialSeat()">x</button>
+                      </td>
+                    </tr>
+
+                    <tr *ngIf="numSpecialSeating > 4" >
+                      <td>
+                        <select class="form-control" id="player5Id" [(ngModel)]="model.player5Id" name="player5Id">
+                                <option *ngFor="let player of players" [value]="player.id">{{player.name}}</option>
+                              </select>
+                      </td>
+                      <td>
+                        <select class="form-control" id="table5" [(ngModel)]="model.table5" name="table5">
+                              <option *ngFor="let tableNum of numTables" [value]="tableNum">{{tableNum}}</option>
+                        </select>
+                      </td>
+                      <td align="left" *ngIf="numSpecialSeating == 5">
+                        <button class="btn btn-danger" (click)="removeSpecialSeat()">x</button>
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <br *ngIf="numSpecialSeating == 0" />
+                <button  *ngIf="numSpecialSeating < 5" class="btn btn-primary" (click)="addSpecialSeat()">Assgin player to a table</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" type="submit">Submit</button>
               </div>
-           </div>
+            </form>
+          </div>
         </div>
-     </div>
-   </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -3,7 +3,7 @@ export class Seating {
 
   constructor(
     public numTables: number,
-    public numSeatsPerTable: number,
+    public seatsPerTable: number,
     public player1Id?: number,
     public player2Id?: number,
     public player3Id?: number,
