@@ -1,6 +1,7 @@
 <div class="row text-center">
   <div class="col-sm">
     <div class="accordion" id="accordionSeating">
+
       <div class="card">
         <div class="card-header" id="headingSeating">
           <h5 class="mb-0">
@@ -114,14 +115,45 @@
                   </tbody>
                 </table>
                 <br *ngIf="numSpecialSeating == 0" />
-                <button  *ngIf="numSpecialSeating < 5" class="btn btn-primary" (click)="addSpecialSeat()">Assgin player to a table</button>
-                &nbsp;&nbsp;&nbsp;
+                <button  *ngIf="numSpecialSeating < 5" class="btn btn-primary" (click)="addSpecialSeat()">Assign player to a table</button>
+                <br/><br/>
                 <button class="btn btn-primary" type="submit">Submit</button>
               </div>
             </form>
           </div>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-header" id="headingSeated">
+          <h5 class="mb-0">
+                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#seated" aria-expanded="false" aria-controls="seated">
+                 Seated
+                 </button>
+              </h5>
+        </div>
+        <div id="seated" class="collapse" aria-labelledby="headingSeated" data-parent="#accordionSeated">
+          <div class="card-body">
+            <table *ngFor="let table of tables" class='table table-borderless table-sm'>
+              <thead>
+                <tr>
+                  <th scope='col'>Player</th>
+                  <th scope='col'>Table</th>
+                  <th scope='col'>Seat</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let seat of table.seats">
+                  <td>{{seat.gamePlayerName}}</td>
+                  <td>{{table.number}}</td>
+                  <td>{{seat.number}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
