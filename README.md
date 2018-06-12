@@ -244,3 +244,25 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 10-games-in-season.
 
 Merged 10-games-in-season into master.
+
+## The current game
+
+Show the game in progress.
+
+Create a current games branch from the master branch
+* `git checkout -b 11-current-game`
+
+Create the current game component.
+
+Create the route and the hamburger menu link.
+
+For the current game show
+* details (money, payouts, ...)
+* clock
+* player board (place, buy in, rebuy, ...)
+
+Diff this branch to the previous branch to see the changes.
+
+Pushed to branch 11-current-game.
+
+Merged 11-current-game into master.
