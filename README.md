@@ -326,9 +326,7 @@ Added existing player route.
 
 Add a button in the current game to add an existing player.
 
-TODO code existing player component.
-
-The existing player component redirects to the current game when the form is submitted.
+Pick a player from the list (sorted by entries for this season) or search and pick from the results.
 
 Diff this branch to the previous branch to see the changes.
 

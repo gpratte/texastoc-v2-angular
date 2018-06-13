@@ -17,6 +17,7 @@ export class ExistingPlayerComponent implements OnInit {
     new Player(3, 'Draco'),
     new Player(3, 'Morpheous'),
     new Player(3, 'Neo'),
+    new Player(3, 'Neophine'),
     new Player(3, 'Snape'),
     new Player(3, 'Trinity')
   ]
@@ -29,15 +30,20 @@ export class ExistingPlayerComponent implements OnInit {
   ngOnInit() {
   }
 
+  select(playerId: number): void {
+    console.log('player id ', playerId);
+  }
+
   search(term: string): void {
-    console.log('!!! term ', term)
-    if (term.trim === '') {
-      this.players.length = 0;
+    console.log('!!! term ', (typeof term))
+    if (term.trim() === '') {
+      this.searchResults.length = 0;
       console.log('returning')
       return;
     }
 
-    this.searchResults = this.players.filter(player => player.name.includes(term));
+    term = term.toLowerCase();
+    this.searchResults = this.players.filter(player => player.name.toLowerCase().includes(term));
   }
 
 }

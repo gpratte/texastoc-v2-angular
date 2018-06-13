@@ -8,18 +8,21 @@
       </select>
 
       <br/>
+      <button class="btn btn-lg btn-primary" type="submit">Add player from list</button>
+      <br/>
+      <br/>
       <h4>Or search</h4>
 
       <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
 
       <ul class="search-result">
         <li *ngFor="let searchResult of searchResults">
-          <a>{{searchResult.name}}</a>
+          <a href="#" (click)="select(searchResult.id)">{{searchResult.name}}</a>
         </li>
       </ul>
 
       <br/>
-      <button class="btn btn-lg btn-primary" type="submit">Add Player</button>
+      <button routerLink="/current-game" class="btn btn-lg btn-primary">Cancel</button>
     </form>
   </div>
 </div>
