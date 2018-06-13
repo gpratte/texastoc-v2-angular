@@ -21,9 +21,23 @@ export class ExistingPlayerComponent implements OnInit {
     new Player(3, 'Trinity')
   ]
 
+  searchResults = [
+  ]
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  search(term: string): void {
+    console.log('!!! term ', term)
+    if (term.trim === '') {
+      this.players.length = 0;
+      console.log('returning')
+      return;
+    }
+
+    this.searchResults = this.players.filter(player => player.name.includes(term));
   }
 
 }

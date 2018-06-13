@@ -2,14 +2,21 @@
   <div class="col-sm">
     <form (ngSubmit)="onSubmit()" #existingPlayerForm="ngForm">
 
-      <label for="name">Name</label>
-      <input type="text" id="name" class="form-control" required autofocus>
-
-      <br/>
-      <label for="player">Player</label>
+      <h4>Pick from a list</h4>
       <select class="form-control" id="player" [(ngModel)]="playerId" name="playerId" required>
             <option *ngFor="let player of players" [value]="player.id">{{player.name}} <span *ngIf="player.entries">({{player.entries}})</span> </option>
       </select>
+
+      <br/>
+      <h4>Or search</h4>
+
+      <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+      <ul class="search-result">
+        <li *ngFor="let searchResult of searchResults">
+          <a>{{searchResult.name}}</a>
+        </li>
+      </ul>
 
       <br/>
       <button class="btn btn-lg btn-primary" type="submit">Add Player</button>
