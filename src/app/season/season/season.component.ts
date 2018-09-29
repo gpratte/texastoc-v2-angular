@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Season } from '../model/season';
+import { AppService } from '../../app.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-season',
@@ -201,9 +203,10 @@ export class SeasonComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private app: AppService, private http: HttpClient) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
+  authenticated() { return this.app.authenticated; }
 
 }
