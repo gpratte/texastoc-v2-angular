@@ -13,14 +13,22 @@ export class AppService {
 
   authenticate(credentials, callback) {
 
-        const headers = new HttpHeaders(credentials ? {
-            authorization : 'Basic ' + btoa(credentials.username + ':' + credentials.password)
-        } : {});
+    console.log('!!! authenticate ', credentials);
 
+        const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'});
+
+        if (credentials) {
+          headers['authorization'] = 'Basic ' + btoa(credentials.username + ':' + credentials.password)
+        }
+        console.log('!!! headers ', headers)
         this.http.get('http://localhost:8080/user', {headers: headers}).subscribe(response => {
-            if (response['name']) {
+            if (response && response['name']) {
+                console.log('!!! auth true');
                 this.authenticated = true;
             } else {
+              console.log('!!! auth false');
                 this.authenticated = false;
             }
             return callback && callback();

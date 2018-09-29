@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Season } from '../model/season';
 import { AppService } from '../../app.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-season',
@@ -203,10 +204,24 @@ export class SeasonComponent implements OnInit {
     ]
   };
 
-  constructor(private app: AppService, private http: HttpClient) { }
+  constructor(private app: AppService, private http: HttpClient, private router: Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (!this.app.authenticated) {
+      console.log('!!! route to loging')
+      this.router.navigate(['/login']);
+    }
+  }
 
-  authenticated() { return this.app.authenticated; }
+  authenticated() {
+    if (this.app.authenticated) {
+      console.log('!!! authenticatd returning true')
+      return true;
+    }
+
+    console.log('!!! route to loging')
+    this.router.navigate(['/login']);
+    return false;
+  }
 
 }
