@@ -208,20 +208,9 @@ export class SeasonComponent implements OnInit {
 
   ngOnInit() {
     if (!this.app.authenticated) {
-      console.log('!!! route to loging')
+      console.log('!!! route to login')
       this.router.navigate(['/login']);
     }
-  }
-
-  authenticated() {
-    if (this.app.authenticated) {
-      console.log('!!! authenticatd returning true')
-      return true;
-    }
-
-    console.log('!!! route to loging')
-    this.router.navigate(['/login']);
-    return false;
   }
 
 }

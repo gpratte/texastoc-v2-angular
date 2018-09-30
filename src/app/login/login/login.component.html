@@ -1,5 +1,5 @@
 <div class="text-center">
-  <form class="form-signin" ng-submit="login()">
+  <form class="form-signin" (ngSubmit)="login()" >
     <img class="d-block mx-auto mb-4" src="./assets/images/texastoc.spades.100x100.png">
 
     <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
@@ -10,7 +10,7 @@
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" [(ngModel)]="credentials.password" required>
 
-    <button class="btn btn-lg btn-primary btn-block" routerLink="/season" type="submit">Log in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
     <div class="checkbox mb-3">
       <br>
       <a routerLink="/forgot-password">Forgot Password</a>
