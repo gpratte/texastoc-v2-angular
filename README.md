@@ -333,3 +333,19 @@ Diff this branch to the previous branch to see the changes.
 Pushed to branch 14-existing-player.
 
 Merged 14-existing-player into master.
+
+## Login using basic authentication
+
+Follow many of the steps in the 
+[Spring Security and Angular](https://spring.io/guides/tutorials/spring-security-and-angular-js/) 
+guide to login via basic authentication. 
+
+
+Module | Function
+------------ | -------------
+app.services.ts | authenticate() - set basic auth header if credential have been entered in login page
+app.component.ts | logout()
+login.component.ts | login()
+xxx.component.ts | ngInit() - route to login if not authenicated
+
+Merged 15-security-basic-auth into master.
