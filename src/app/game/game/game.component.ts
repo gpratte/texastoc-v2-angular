@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Game } from '../model/game';
 import { Player } from '../../player/model/player';
+import {AppService} from '../../app.service';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-game',
@@ -21,9 +24,12 @@ export class GameComponent implements OnInit {
     console.log('submitted ' + JSON.stringify(this.model));
   }
 
-  constructor() { }
+  constructor(private app: AppService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    if (!this.app.authenticated) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

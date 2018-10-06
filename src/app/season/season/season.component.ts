@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Season } from '../model/season';
+import { AppService } from '../../app.service';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-season',
@@ -201,9 +204,12 @@ export class SeasonComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private app: AppService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    if (!this.app.authenticated) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

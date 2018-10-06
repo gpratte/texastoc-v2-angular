@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Supplies } from '../model/supplies';
+import {AppService} from '../../app.service';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-supplies',
@@ -28,9 +31,12 @@ export class SuppliesComponent implements OnInit {
     ]
   };
 
-  constructor() { }
+  constructor(private app: AppService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    if (!this.app.authenticated) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }
