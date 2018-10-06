@@ -3,6 +3,9 @@ import { Seating } from '../model/seating';
 import { Player } from '../../player/model/player';
 import { Table } from '../model/table';
 import { Seat } from '../model/seat';
+import {AppService} from '../../app.service';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-game-seating',
@@ -47,9 +50,12 @@ export class GameSeatingComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private app: AppService, private http: HttpClient, private router: Router) { }
 
   ngOnInit() {
+    if (!this.app.authenticated) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }
